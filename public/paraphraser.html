@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paraphrasing Tool</title>
+    <title>Gob - Paraphrasing Tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center flex-col">
     <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
         <div class="flex justify-between items-center md:mx-40 lg:mx-40">
             <!-- Logo -->
@@ -26,9 +26,9 @@
             </div>
     
             <nav class="hidden md:flex space-x-6 text-gray-400">
-                <a href="#" class="text-blue-400 text-lg block">Editor</a>
-                <a href="#" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
-                <a href="#" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
+                <a href="paraphraser.html" class="text-blue-400 text-lg block">Editor</a>
+                <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
+                <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
             </nav>
     
             <!-- Mobile Menu -->
@@ -41,9 +41,9 @@
     
         <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
-            <a href="#" class="text-blue-400 text-lg block">Editor</a>
-            <a href="#" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
-            <a href="#" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
+            <a href="paraphraser.html" class="text-blue-400 text-lg block">Editor</a>
+            <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
+            <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
         </div>
     </header>
     <main class="flex flex-col items-center mt-12 lg:mt-24 w-full px-4 flex-grow">
@@ -79,30 +79,24 @@
     <footer class="py-10 w-full text-white bg-gray-800">
         <div class="container mx-auto text-center">
             <!-- Logo -->
-            <div class="text-blue-400 text-6xl lg:text-4xl mb-4">
+            <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
                 <i class="fas fa-globe"></i>
             </div>
     
             <!-- Links Section -->
             <div class="mb-6">
-                <ul class="hidden text-3xl lg:text-xl sm:flex justify-center space-x-4">
-                    <li><a href="#" class="text-blue-400">Home</a></li>
-                    <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
+                <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
+                    <li><a href="index.html" class="text-blue-400">Home</a></li>
+                    <li><a href="pricing.html" class="hover:text-blue-400">Pricing</a></li>
                 </ul>
             </div>
     
-            <!-- Buttons -->
-            <div class="flex flex-wrap justify-center space-x-4 sm:space-x-0 sm:flex-col sm:items-center mb-6">
-                <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-5 py-2 rounded-lg text-3xl lg:text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 w-auto sm:w-40">Log in</button>
-                <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-5 py-2 rounded-lg text-3xl lg:text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 w-auto sm:w-40 mt-2 sm:mt-4">Sign Up</button>
-            </div>
-    
             <!-- Footer Text -->
-            <div class="text-3xl lg:text-xl text-gray-500">
+            <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
                 © 2025 Gob. All rights reserved.
             </div>
         </div>
-    </footer>
+    </footer>    
 
     <script src="script.js"></script>
 </body>

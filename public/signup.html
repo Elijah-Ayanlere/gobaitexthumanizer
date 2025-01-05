@@ -4,40 +4,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="bg-gray-900 min-h-screen flex items-center justify-center flex-col">
-    <div class="w-full max-w-xl p-0 space-y-8 flex flex-col min-h-screen">
+    <div class="w-full max-w-3xl lg:max-w-2xl p-0 space-y-8 flex flex-col min-h-screen">
         <div class="text-blue-400 mt-72 lg:mt-24 text-9xl lg:text-6xl flex justify-center">
             <i class="fas fa-globe"></i>
         </div>
         <h2 class="text-center mt-6 lg:mt-4 text-8xl lg:text-4xl font-extrabold text-white">Sign Up</h2>
         <form class="lg:mt-4 space-y-6 lg:p-12 rounded-lg w-full mx-auto">
             <div class="rounded-md mt-32 lg:mt-1 shadow-sm -space-y-px">
+                <!-- Email Field -->
                 <div>
                     <label for="email-address" class="block text-5xl lg:text-3xl font-medium text-gray-100">Email</label>
                     <input id="email-address" name="email" type="email" autocomplete="email" required
-                        class="appearance-none mt-8 lg:mt-2 rounded-lg relative block w-full px-8 py-8 border border-gray-700 bg-gray-700 placeholder-gray-400 text-4xl lg:text-xl text-gray-400 rounded-t-md focus:outline-none font-semibold focus:ring-blue-400 focus:border-blue-400 focus:z-10"
+                        class="appearance-none mt-8 lg:mt-2 rounded-3xl relative block w-full px-8 py-12 lg:py-6 border border-gray-700 bg-gray-700 placeholder-gray-400 text-4xl lg:text-xl text-gray-400 focus:outline-none font-semibold focus:ring-blue-400 focus:border-blue-400 focus:z-10"
                         placeholder="Type your email">
                 </div>
             </div>
+            
+            <!-- reCAPTCHA -->
             <div class="flex items-center justify-center">
                 <div class="g-recaptcha" data-sitekey="your_site_key"></div>
             </div>
+            
+            <!-- Sign Up Button -->
             <div>
                 <button type="submit"
                     onclick="window.location.href='login.html'" 
-                    class="group relative w-full mt-12 lg:mt-1 flex justify-center py-6 px-6 border border-blue-400 text-3xl lg:text-xl font-semibold rounded-md text-black bg-blue-400 hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+                    class="group relative w-full mt-12 lg:mt-1 flex justify-center py-12 lg:py-6 px-6 border border-blue-400 text-4xl lg:text-xl font-semibold rounded-3xl text-black bg-blue-400 hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
                     style="font-family: 'Roboto Mono', monospace;">
                     Sign Up with Email
                 </button>
             </div>
+            
+            <!-- Google Sign Up Button -->
             <div>
                 <button type="button"
-                    class="group relative w-full mt-12 lg:mt-1 flex justify-center py-6 px-6 border border-blue-400 text-3xl lg:text-xl font-semibold rounded-md text-white bg-transparent hover:bg-transparent hover:border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+                    class="group relative w-full mt-12 lg:mt-1 flex justify-center py-12 lg:py-6 px-6 border border-blue-400 text-4xl lg:text-xl font-semibold rounded-3xl text-white bg-transparent hover:bg-transparent hover:border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
                     style="font-family: 'Roboto Mono', monospace;">
-                    <!-- Google icon image -->
+                    <!-- Google Icon -->
                     <img src="image/google_icon-removebg-preview.png" alt="Google" class="w-10 lg:w-8 h-10 lg:h-8 mr-3 align-middle">
                     Sign Up with Google
                 </button>
-            </div>
+            </div>            
             <div class="text-center text-3xl lg:text-xl text-gray-400">
                 <p>Already have an account? <a href="login.html" class="font-medium text-blue-500 hover:text-blue-400">Log in</a></p>
             </div>
@@ -54,7 +61,7 @@
     
             <!-- Links Section -->
             <div class="mb-6">
-                <ul class="hidden text-3xl lg:text-xl sm:flex justify-center space-x-4">
+                <ul class="flex text-4xl lg:text-xl sm:flex justify-center space-x-4">
                     <li><a href="#" class="text-blue-400">Home</a></li>
                     <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
                 </ul>
@@ -62,16 +69,16 @@
     
             <!-- Buttons -->
             <div class="flex flex-wrap justify-center space-x-4 sm:space-x-0 sm:flex-col sm:items-center mb-6">
-                <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-5 py-2 rounded-lg text-3xl lg:text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 w-auto sm:w-40">Log in</button>
-                <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-5 py-2 rounded-lg text-3xl lg:text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 w-auto sm:w-40 mt-2 sm:mt-4">Sign Up</button>
+                <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-8 py-4 lg:py-2 rounded-xl text-2xl lg:text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 w-32 sm:w-40">Log in</button>
+                <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-8 py-4 lg:py-2 rounded-xl text-2xl lg:text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 w-32 sm:w-40 mt-2 sm:mt-4">Sign Up</button>
             </div>
     
             <!-- Footer Text -->
-            <div class="text-3xl lg:text-xl text-gray-500">
+            <div class="text-xl sm:text-3xl lg:text-xl text-gray-500">
                 © 2025 Gob. All rights reserved.
             </div>
         </div>
-    </footer>
+    </footer>    
 </body>
 
 </html>

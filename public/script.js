@@ -108,3 +108,4 @@ const menuButton = document.getElementById('menu-button');
         updateOutputPlaceholder();
     
         outputArea.addEventListener("input", updateOutputPlaceholder);
+        
