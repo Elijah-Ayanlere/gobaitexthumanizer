@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass AI Content Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="icon" type="image/globe-solid.svg+xml" href="favicon.svg"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Slide Down Animation */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slide Up Animation */
+        @keyframes slideUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.3s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
+        <div class="flex justify-between items-center md:mx-40 lg:mx-40">
+            <!-- Logo -->
+            <div class="text-blue-400 text-3xl">
+                <i class="fas fa-globe"></i>
+            </div>
+    
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-blue-400 text-lg transition-all duration-300">Home</a>
+                <a href="#" class="text-gray-400 text-lg hover:text-blue-300 transition-all duration-300">Pricing</a>
+            </nav>
+    
+            <!-- Buttons -->
+            <div class="hidden md:flex space-x-4">
+                <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-5 py-2 rounded-lg text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300">Log in</button>
+                <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-5 py-2 rounded-lg text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300">Sign Up</button>                                    
+            </div>
+    
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
+            <a href="index.html" class="text-blue-400 text-lg block">Home</a>
+            <a href="#" class="text-gray-400 text-lg block hover:text-blue-300">Pricing</a>
+            <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-4 py-2 rounded-lg hover:bg-blue-400 hover:text-gray-900 w-full">Log in</button>
+            <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-5 py-2 rounded-lg text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 w-full">Sign Up</button>
+        </div>
+    </header>    
+
+    <!-- Main Section -->
+    <main class="flex flex-col items-center justify-center text-center mt-12 lg:mt-20 px-4">
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+            <span class="text-blue-400">Bypass</span> AI Content Detection with<br> Gob #1 AI Tool
+        </h1>
+        <p class="text-gray-400 mt-16 text-lg md:text-xl max-w-3xl">
+            ▷ A paraphrasing tool to Bypass AI content detectors, like GPTZero, in one click.<br> ✓ Gob rephrases AI content to bypass and avoid AI content detectors.
+        </p>
+        <button onclick="window.location.href='signup.html'" class="bg-blue-400 mt-24 text-gray-900 px-8 py-4 rounded-lg text-xl hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300">
+            Start Free Trial
+        </button>
+
+        <!-- Links Section -->
+        <p class="text-gray-400 mt-24 lg:mt-40 text-lg md:text-xl">If there is a detector, we bypassed it</p>
+        <div class="flex flex-wrap justify-center space-x-4 mt-16 text-lg md:text-xl text-gray-400">
+            <span class="hover:text-blue-400 cursor-pointer">Turnitin</span>
+            <span class="hover:text-blue-400 cursor-pointer">GPTZero</span>
+            <span class="hover:text-blue-400 cursor-pointer">Originality AI</span>
+            <span class="hover:text-blue-400 cursor-pointer">Copyleaks</span>
+            <span class="hover:text-blue-400 cursor-pointer">Writer</span>
+            <span class="hover:text-blue-400 cursor-pointer">ChatGPT Content Detector</span>
+            <span class="hover:text-blue-400 cursor-pointer">GPTRadar</span>
+            <span class="hover:text-blue-400 cursor-pointer">Winston AI</span>
+            <span class="hover:text-blue-400 cursor-pointer">Content At Scale</span>
+            <span class="hover:text-blue-400 cursor-pointer">Corrector</span>
+            <span class="hover:text-blue-400 cursor-pointer">ZeroGPT</span>
+            <span class="hover:text-blue-400 cursor-pointer">Crossplag</span>
+            <span class="hover:text-blue-400 cursor-pointer">Sapling</span>
+        </div>
+
+        <div class="container mx-auto px-4 py-32 lg:py-64">
+            <div class="flex flex-col lg:flex-row items-center justify-center">
+              <!-- Left Section -->
+              <div class="relative bg-gray-800 p-8 rounded-lg shadow-lg text-left lg:w-1/2 mb-16 lg:mb-0">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-green-400 to-teal-500 rounded-full opacity-20 -z-10"></div>
+                <h2 class="text-xl font-bold mb-4">Before</h2>
+                <p class="mb-4">Desert scene with a shimmering blue crystal and people approaching it, with 4x4 vehicles in the distance.</p>
+                <h2 class="text-xl font-bold mb-4">After</h2>
+                <p class="text-green-400 mb-4">
+                  Scene of a desert with a <span class="text-teal-400">source giving continually blue light</span> to people <span class="text-teal-400">walking towards it downstage</span> and 4x4 vehicles <span class="text-teal-400">driving into the desert upstage</span>.
+                </p>
+                <div class="flex flex-col lg:flex-row items-start lg:space-x-4 space-y-4 lg:space-y-0">
+                  <!-- GPT Zero and Input -->
+                  <div class="flex flex-col lg:w-1/2">
+                    <span class="bg-blue-400 text-gray-900 px-3 py-1 rounded-full w-40">GPT Zero: 16%</span>
+                  </div>
+                  <div class="flex flex-col lg:w-1/2">
+                    <div class="bg-gray-700 p-2 rounded-lg w-full">
+                        <span class="block text-gray-400">Freeze-list</span>
+                        <input 
+                          type="text" 
+                          placeholder="Write keywords here" 
+                          class="bg-gray-800 text-white p-2 rounded-lg mt-1 w-full focus:border-blue-400 focus:outline-none" 
+                        >
+                    </div>                      
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Right Section -->
+              <div class="lg:w-1/2 mt-8 lg:mt-0 lg:ml-16">
+                <h2 class="text-3xl text-center lg:text-left font-bold mb-8">Super simple</h2>
+                <div class="space-y-8 mt-16">
+                    <!-- Step 1 -->
+                    <div class="flex items-center flex-col lg:flex-row lg:space-x-4">
+                      <div class="flex items-center justify-center w-8 h-8 bg-transparent border border-blue-400 text-blue-400 rounded-full mb-2 lg:mb-0">
+                        1
+                      </div>
+                      <p class="text-center lg:text-left">Our bypass AI content detection tool is super easy to use. Just paste the text</p>
+                    </div>
+                  
+                    <!-- Step 2 -->
+                    <div class="flex items-center flex-col lg:flex-row lg:space-x-4">
+                      <div class="flex items-center justify-center w-8 h-8 bg-transparent border border-blue-400 text-blue-400 rounded-full mb-2 lg:mb-0">
+                        2
+                      </div>
+                      <p class="text-center lg:text-left">Press the button</p>
+                    </div>
+                  
+                    <!-- Step 3 -->
+                    <div class="flex items-center flex-col lg:flex-row lg:space-x-4">
+                      <div class="flex items-center justify-center w-8 h-8 bg-transparent border border-blue-400 text-blue-400 rounded-full mb-2 lg:mb-0">
+                        3
+                      </div>
+                      <p class="text-center lg:text-left">Get a perfect AI content detection bypass</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mx-auto py-16 px-4">
+            <h1 class="text-center text-4xl font-bold mb-12">Why Gob?</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 mt-32 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg text-left h-96 sm:h-[400px] md:h-96">
+                    <div class="text-4xl text-blue-400 mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="text-2xl mt-10 font-bold mb-4">Reliable</h2>
+                    <p class="text-gray-400 text-xl mt-16">Gob boasts a whopping 99% detector bypass rate. We will not charge but tell you if we don't bypass.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-left h-96 sm:h-[400px] md:h-96">
+                    <div class="text-4xl text-blue-400 mb-4">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h2 class="text-2xl mt-10 font-bold mb-4">Affordable</h2>
+                    <p class="text-gray-400 text-xl mt-16">We'll help you create beautiful human content to outsmart most detectors and websites to bypass AI detection without breaking the bank.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-left h-[450px] sm:h-[400px] md:h-96">
+                    <div class="text-4xl text-blue-400 mb-4">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h2 class="text-2xl mt-10 font-bold mb-4">Flexible pricing</h2>
+                    <p class="text-gray-400 text-xl mt-16">You can pay monthly or annually and adjust the number of words to be able to convert each month: the more words, the cheaper the plan to bypass AI-generated content.</p>
+                </div>
+            </div>
+                       
+            <div class="text-center mt-16">
+                <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 font-bold py-4 px-8 text-xl rounded-lg tracking-wide hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300">Get started for free</button>
+            </div>            
+        </div>
+
+        <div class="container mx-auto p-8">
+            <div class="flex flex-col md:flex-row">
+                <!-- Left Side: FAQ Questions -->
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <div 
+                        class="faq-question bg-blue-400 text-left text-xl text-black p-4 rounded-lg mb-4 cursor-pointer active" 
+                        data-target="faq1"
+                    >
+                        What is AI detection?
+                    </div>
+                    <div 
+                        class="faq-question border border-gray-600 p-4 text-left text-xl rounded-lg mb-4 cursor-pointer" 
+                        data-target="faq2"
+                    >
+                        How to bypass AI detection?
+                    </div>
+                    <div 
+                        class="faq-question border border-gray-600 p-4 text-left text-xl rounded-lg cursor-pointer" 
+                        data-target="faq3"
+                    >
+                        What is GPTInf?
+                    </div>
+                </div>
+                <!-- Right Side: FAQ Answer -->
+                <div class="md:w-2/3 lg:ml-24 md:pl-8">
+                    <div id="faq1" class="faq-answer">
+                        <h1 class="text-4xl text-left font-bold mb-4">What is AI detection?</h1>
+                        <p class="leading-8 text-lg text-left mt-16" style="font-family: 'Roboto Mono', monospace;">
+                            AI detection technologies use advanced machine learning models to spot content generated by AI. The primary function of an AI detector is to identify certain features within the text that distinguish it from human writing. These detectors often rely on language models similar to the ones used by AI writing tools. They analyze two main aspects: perplexity and burstiness.
+
+                            Perplexity measures the unpredictability of content, or how likely it is to confuse a reader. AI-generated content typically has low perplexity, meaning it's coherent and flows well, but it's predictable. Human writing, on the other hand, tends to have higher perplexity due to more varied language use.
+
+                            Burstiness refers to the variation in sentence structure and length. Text with little variation in these areas exhibits low burstiness, which is a sign of AI-generated content. AI tools often produce content with predictable sentence lengths and structures, whereas human writing is more dynamic. When content shows low burstiness, it's more likely to be AI-generated.
+                        </p>
+                    </div>
+                    <div id="faq2" class="faq-answer hidden">
+                        <h1 class="text-4xl text-left font-bold mb-4">How to bypass AI detection?</h1>
+                        <p class="leading-8 text-lg text-left mt-16" style="font-family: 'Roboto Mono', monospace;">
+                            The only effective way to bypass AI detectors is to paraphrase AI-generated content, introducing greater diversity in vocabulary, grammar, and sentence structures. However, manually rewriting AI text can be time-consuming, and in today’s fast-paced world, not everyone has the time for it. That’s where GPTinf — the leading tool for creating undetectable AI content — comes in. Using GPTinf is as simple as 1-2-3: just paste your AI-generated text, click the button, and receive a fully humanized version that easily bypasses AI text detection.
+                        </p>
+                    </div>
+                    <div id="faq3" class="faq-answer hidden">
+                        <h1 class="text-4xl text-left font-bold mb-4">What is Gob?</h1>
+                        <p class="leading-8 text-lg text-left mt-16" style="font-family: 'Roboto Mono', monospace;">
+                            Gob is a powerful AI detection bypass tool that effectively paraphrases content to eliminate conventional phrasing, repetitive sentence structures, and predictable patterns. It replaces these elements with more natural, human-like language while maintaining high-quality standards, making Gob a reliable and efficient tool for bypassing AI detectors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-40 mx-auto p-4">
+            <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
+            <div class="space-y-4">
+                <!-- Toggle Section 1 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">How do I make AI content undetectable?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            Given that an average detector looks for repetitive sentence structures and common word patterns that align with AI models, you can bypass AI detection by rephrasing your text, replacing repetitive patterns and structures with more diverse language, adding transitions, and using more casual phrasing. Gob provides a reliable tool for this.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 2 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">What software is used to humanize AI content?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            You can use Gob to humanize AI content and bypass any detector. Gob is a user-friendly, affordable tool that can help you convert any AI text into a human piece in a few clicks. Gob - Best AI Humanizer, that leaves a great user experience.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 3 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">What is the quality of the final result?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            Gob has outsmarted detectors in 96% of cases so far. The tool preserves the overall meaning of the text while replacing repeating AI structures and predictable word patterns. For the best output from AI bypass tools, we recommend reviewing the text with a grammar-checking tool.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 4 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">How do AI detectors work?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            AI detection software uses the same language models as AI-powered content creation tools. It employs ML (machine learning) and NLP (natural language processing) and artificial intelligence technology to analyze content and identify patterns. Each detector is trained on massive datasets of human-written and AI-generated texts, with its algorithm working on the assumption that content produced by artificial intelligence has certain features, such as repetitiveness, lack of semantic meaning, conventional word patterns, etc. The detector analyzes content for a range of parameters, including wording, sentence structures, and predictability, and compares it with the database of texts produced by humans and artificial intelligence.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 5 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">Can I trust AI detection tools today?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            An artificial intelligence content detector typically provides a score showing the likeliness of the text being produced by AI. The accuracy of detection tools varies depending on the tool and the content complexity. Even the most advanced AI detectors aren't foolproof and sometimes provide false results. It's important to understand that the detectors aren't equal. They can utilize different models, leading to different results. Moreover, some detectors work better than others, and it often happens that detectors that generally work well have issues with identifying content produced by both a human and artificial intelligence. Given that, you can't entirely rely on AI detectors, making bypass AI detection tools an effective solution.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 6 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">Which Gob pricing plan should I choose?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            Firstly, analyze how many words you usually need to rewrite monthly. We offer many plans for our AI bypassing tool based on the number of words available to rephrase per month: 10,000, 20,000, 35,000, 50,000, 75,000, 100,000, 150,000, 200,000, 300,000, and 500,000. Also, consider how much you want to invest in an AI detector bypasser: for instance, a 10,000-word plan will cost you $12/month, while you'll have to pay $99 if you're going to humanize 100,000 per month. If you subscribe to Gob’s AI content bypass tool for a year, you'll get a good discount; for example, an annual subscription for rephrasing 100,000 words monthly will cost you only $66/month. But that's not all: we offer a free trial so that you can check out how AI that bypasses AI detection works and make a more informed decision about choosing your best plan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <div class="bg-gray-800 text-center p-10 rounded-lg w-full h-96 shadow-lg mb-12">
+            <h1 class="leading-10 text-2xl lg:text-3xl mt-8 lg:mt-16 md:text-5xl font-bold mb-6 break-words">
+                How to <span class="text-blue-400">bypass</span> AI content detection? – with Gob
+            </h1>
+            <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 font-bold mt-16 py-4 px-8 text-xl rounded-lg tracking-wide hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300">
+                Start free trial
+            </button>
+        </div>
+
+        <footer class="py-10 w-full text-white">
+            <div class="container mx-auto text-center">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl">
+                    <i class="fas fa-globe"></i>
+                </div>   
+        
+                <!-- Links Section -->
+                <div class="mb-6 mt-2">
+                    <!-- First Set of Links -->
+                    <ul class="hidden sm:flex justify-center space-x-4">
+                        <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-400">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
+                    </ul>
+        
+                    <!-- Second Set of Links -->
+                    <ul class="hidden sm:flex justify-center space-x-4">
+                        <li><a href="#" class="hover:text-blue-400">Undetectable AI</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Humanize Text</a></li>
+                        <li><a href="#" class="hover:text-blue-400">TurnItIn AI detection</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bypass Originality AI</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bypass AI content detection</a></li>
+                    </ul>
+        
+                    <!-- Mobile View: Display Links as List -->
+                    <ul class="sm:hidden flex flex-col items-center space-y-4 text-left">
+                        <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-400">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Undetectable AI</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Humanize Text</a></li>
+                        <li><a href="#" class="hover:text-blue-400">TurnItIn AI detection</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bypass Originality AI</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bypass AI content detection</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Buttons -->
+                <div class="flex flex-wrap justify-center space-x-4 sm:space-x-0 sm:flex-col sm:items-center mb-6">
+                    <button onclick="window.location.href='login.html'" class="border border-blue-400 text-blue-400 px-5 py-2 rounded-lg text-lg hover:bg-blue-400 hover:text-gray-900 transition-all duration-300 w-auto sm:w-40">Log in</button>
+                    <button onclick="window.location.href='signup.html'" class="bg-blue-400 text-gray-900 px-5 py-2 rounded-lg text-lg hover:bg-transparent hover:border hover:border-blue-400 hover:text-blue-400 transition-all duration-300 w-auto sm:w-40 mt-2 sm:mt-4">Sign Up</button>
+                </div>
+        
+                <!-- Footer Text -->
+                <div class="text-gray-500">
+                    © 2025 Gob. All rights reserved.
+                </div>
+            </div>
+        </footer>          
+          
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
