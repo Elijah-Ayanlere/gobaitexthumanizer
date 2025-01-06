@@ -17,87 +17,94 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center flex-col">
-    <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
-        <div class="flex justify-between items-center md:mx-40 lg:mx-40">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl">
-                <i class="fas fa-globe"></i>
+<body class="bg-gray-900 text-white ">
+
+    <!-- Loader placeholder -->
+    <div id="loader-container"></div>
+
+    <div id="main-content" class="hidden min-h-screen flex items-center justify-center flex-col">
+        <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
+            <div class="flex justify-between items-center md:mx-40 lg:mx-40">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl">
+                    <i class="fas fa-globe"></i>
+                </div>
+        
+                <nav class="hidden md:flex space-x-6 text-gray-400">
+                    <a href="paraphraser.html" class="text-blue-400 text-lg block">Editor</a>
+                    <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
+                    <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
+                </nav>
+        
+                <!-- Mobile Menu -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-    
-            <nav class="hidden md:flex space-x-6 text-gray-400">
+        
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
                 <a href="paraphraser.html" class="text-blue-400 text-lg block">Editor</a>
                 <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
                 <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
-            </nav>
-    
-            <!-- Mobile Menu -->
-            <div class="md:hidden">
-                <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
-        </div>
-    
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
-            <a href="paraphraser.html" class="text-blue-400 text-lg block">Editor</a>
-            <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-300">History</a>
-            <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-300">Account</a>
-        </div>
-    </header>
-    <main class="flex flex-col items-center mt-12 lg:mt-24 w-full px-4 flex-grow">
-        <h1 class="text-4xl text-left font-bold mb-8">Write and humanize</h1>
-        <div class="flex flex-col md:flex-row w-full max-w-6xl space-y-4 md:space-y-0 md:space-x-4">
-            <!-- Input Area -->
-            <div class="bg-gray-800 p-4 rounded-lg flex-1">
-                <textarea id="input-text" 
-                    class="w-full h-80 bg-gray-800 text-gray-400 p-2 rounded-lg border border-gray-700 focus:ring-blue-400 focus:border-blue-400 outline-none" 
-                    placeholder="Insert (English) text here"></textarea>
-                <div class="flex justify-between items-center mt-2">
-                    <button class="text-gray-400">Advanced options</button>
-                    <span id="word-count" class="text-gray-400">0/3000 words</span>
+        </header>
+        <main class="flex flex-col items-center mt-12 lg:mt-24 w-full px-4 flex-grow">
+            <h1 class="text-4xl text-left font-bold mb-8">Write and humanize</h1>
+            <div class="flex flex-col md:flex-row w-full max-w-6xl space-y-4 md:space-y-0 md:space-x-4">
+                <!-- Input Area -->
+                <div class="bg-gray-800 p-4 rounded-lg flex-1">
+                    <textarea id="input-text" 
+                        class="w-full h-80 bg-gray-800 text-gray-400 p-2 rounded-lg border border-gray-700 focus:ring-blue-400 focus:border-blue-400 outline-none" 
+                        placeholder="Insert (English) text here"></textarea>
+                    <div class="flex justify-between items-center mt-2">
+                        <button class="text-gray-400">Advanced options</button>
+                        <span id="word-count" class="text-gray-400">0/3000 words</span>
+                    </div>
+                </div>
+            
+                <!-- Output Area -->
+                <div class="bg-gray-800 p-4 rounded-lg flex-1">
+                    <div id="output-area" 
+                        class="w-full h-80 bg-gray-800 text-gray-400 p-2 rounded-lg border border-gray-700 overflow-auto relative" 
+                        placeholder="Paraphrased text will appear here"></div>
+                    <div class="flex justify-end items-center mt-2">
+                        <span id="output-word-count" class="text-gray-400">0 words</span>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Paraphrase Button -->
+            <button class="bg-blue-400 mt-10 lg:mt-16 text-gray-900 px-16 py-4 rounded-lg text-xl mb-8">Paraphrase</button>        
+        </main>
+    
+        <!-- Footer -->
+        <footer class="py-10 w-full text-white bg-gray-800">
+            <div class="container mx-auto text-center">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
+                    <i class="fas fa-globe"></i>
+                </div>
         
-            <!-- Output Area -->
-            <div class="bg-gray-800 p-4 rounded-lg flex-1">
-                <div id="output-area" 
-                    class="w-full h-80 bg-gray-800 text-gray-400 p-2 rounded-lg border border-gray-700 overflow-auto relative" 
-                    placeholder="Paraphrased text will appear here"></div>
-                <div class="flex justify-end items-center mt-2">
-                    <span id="output-word-count" class="text-gray-400">0 words</span>
+                <!-- Links Section -->
+                <div class="mb-6">
+                    <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
+                        <li><a href="paraphraser.html" class="text-blue-400">Home</a></li>
+                        <li><a href="pricing.html" class="hover:text-blue-400">Pricing</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Footer Text -->
+                <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
+                    © 2025 Gob. All rights reserved.
                 </div>
             </div>
-        </div>
-        
-        <!-- Paraphrase Button -->
-        <button class="bg-blue-400 mt-10 lg:mt-16 text-gray-900 px-16 py-4 rounded-lg text-xl mb-8">Paraphrase</button>        
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-10 w-full text-white bg-gray-800">
-        <div class="container mx-auto text-center">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
-                <i class="fas fa-globe"></i>
-            </div>
-    
-            <!-- Links Section -->
-            <div class="mb-6">
-                <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
-                    <li><a href="index.html" class="text-blue-400">Home</a></li>
-                    <li><a href="pricing.html" class="hover:text-blue-400">Pricing</a></li>
-                </ul>
-            </div>
-    
-            <!-- Footer Text -->
-            <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
-                © 2025 Gob. All rights reserved.
-            </div>
-        </div>
-    </footer>    
+        </footer>    
+    </div>
 
     <script src="script.js"></script>
+    <script src="loader.js"></script>
 </body>
 </html>

@@ -6,196 +6,203 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center flex-col">
-    <header id="dynamic-header" class="bg-gray-900 w-full p-8 lg:p-10 z-50 transition-all duration-300">
-        <div class="flex justify-between items-center md:mx-40 lg:mx-40">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl">
-                <i class="fas fa-globe"></i>
+<body class="bg-gray-900 text-white">
+
+    <!-- Loader placeholder -->
+    <div id="loader-container"></div>
+
+    <div id="main-content" class="hidden min-h-screen flex items-center justify-center flex-col">
+        <header id="dynamic-header" class="bg-gray-900 w-full p-8 lg:p-10 z-50 transition-all duration-300">
+            <div class="flex justify-between items-center md:mx-40 lg:mx-40">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl">
+                    <i class="fas fa-globe"></i>
+                </div>
+        
+                <nav class="hidden md:flex space-x-6 text-gray-400">
+                    <a href="paraphraser.html" class="text-gray-400 text-lg block hover:text-blue-400">Editor</a>
+                    <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-400">History</a>
+                    <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
+                </nav>
+        
+                <!-- Mobile Menu -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-    
-            <nav class="hidden md:flex space-x-6 text-gray-400">
-                <a href="paraphraser.html" class="text-gray-400 text-lg block hover:text-blue-400">Editor</a>
+        
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
+                <a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a>
                 <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-400">History</a>
                 <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
-            </nav>
+            </div>
+        </header>
     
-            <!-- Mobile Menu -->
-            <div class="md:hidden">
-                <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <div class="container mx-auto p-6 mb-8">
+            <h1 class="text-center mt-8 text-5xl lg:text-5xl md:text-4xl font-bold mb-8">Get the most undetectable content <br> paraphrasing tool</h1>
+            
+            <!-- Toggle Button -->
+            <div class="flex mt-14 items-center mb-8">
+                <span class="mr-4 text-xl font-semibold">Monthly</span>
+                <div class="relative">
+                    <input type="checkbox" id="toggle" class="hidden peer">
+                    <!-- Label now changes background when checked -->
+                    <label for="toggle" class="block w-16 h-8 bg-gray-400 rounded-full cursor-pointer transition-all peer-checked:bg-blue-300"></label>
+                    <!-- Dot moves and changes background color -->
+                    <div class="dot absolute w-8 h-8 bg-gray-100 rounded-full top-0 left-0 transition-transform peer-checked:translate-x-8 peer-checked:bg-blue-400"></div>
+                </div>
+                <span class="ml-4 text-xl font-semibold">Yearly (33% off)</span>
+            </div>        
+            
+            <!-- Pricing Plans -->
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
+                <!-- Lite Plan -->
+                <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3">
+                    <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Lite</h2>
+                    <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
+                        <li><strong>20,000</strong> words / mo.</li>
+                        <li><strong>500</strong> words per process</li>
+                        <li>Undetectable by all AIs</li>
+                        <li>Compare mode</li>
+                        <li>No weird or random words</li>
+                        <li>Customer support</li>
+                    </ul>
+                    <p id="lite-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-64">$19 / mo.</p>
+                    <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Lite</button>
+                </div>
+            
+                <!-- Basic Plan -->
+                <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3 border-2 border-blue-400 relative">
+                    <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Basic</h2>
+                    <div class="absolute top-0 right-0 bg-blue-400 text-black px-2 py-1 rounded-bl-lg">Most Loved</div>
+                    <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
+                        <li><strong>50,000</strong> words / mo.</li>
+                        <li><strong>Unlimited</strong> words per process</li>
+                        <li>Re-paraphrasing is free</li>
+                        <li>Undetectable by all AIs</li>
+                        <li>Compare mode</li>
+                        <li>No weird or random words</li>
+                        <li>Customer support</li>
+                        <li>Early access</li>
+                    </ul>
+                    <p id="basic-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-48">$29 / mo.</p>
+                    <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Basic</button>
+                </div>
+            
+                <!-- Pro Plan -->
+                <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3">
+                    <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Pro</h2>
+                    <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
+                        <li><strong>150,000</strong> words / mo.</li>
+                        <li><strong>Unlimited</strong> words per process</li>
+                        <li>Re-paraphrasing is free</li>
+                        <li>Undetectable by all AIs</li>
+                        <li>Compare mode</li>
+                        <li>No weird or random words</li>
+                        <li>Customer support</li>
+                        <li>Early access</li>
+                    </ul>
+                    <p id="pro-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-48">$79 / mo.</p>
+                    <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Pro</button>
+                </div>
             </div>
         </div>
     
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
-            <a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a>
-            <a href="history.html" class="text-gray-400 text-lg block hover:text-blue-400">History</a>
-            <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
-        </div>
-    </header>
-
-    <div class="container mx-auto p-6 mb-8">
-        <h1 class="text-center mt-8 text-5xl lg:text-5xl md:text-4xl font-bold mb-8">Get the most undetectable content <br> paraphrasing tool</h1>
-        
-        <!-- Toggle Button -->
-        <div class="flex mt-14 items-center mb-8">
-            <span class="mr-4 text-xl font-semibold">Monthly</span>
-            <div class="relative">
-                <input type="checkbox" id="toggle" class="hidden peer">
-                <!-- Label now changes background when checked -->
-                <label for="toggle" class="block w-16 h-8 bg-gray-400 rounded-full cursor-pointer transition-all peer-checked:bg-blue-300"></label>
-                <!-- Dot moves and changes background color -->
-                <div class="dot absolute w-8 h-8 bg-gray-100 rounded-full top-0 left-0 transition-transform peer-checked:translate-x-8 peer-checked:bg-blue-400"></div>
-            </div>
-            <span class="ml-4 text-xl font-semibold">Yearly (33% off)</span>
-        </div>        
-        
-        <!-- Pricing Plans -->
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-            <!-- Lite Plan -->
-            <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3">
-                <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Lite</h2>
-                <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
-                    <li><strong>20,000</strong> words / mo.</li>
-                    <li><strong>500</strong> words per process</li>
-                    <li>Undetectable by all AIs</li>
-                    <li>Compare mode</li>
-                    <li>No weird or random words</li>
-                    <li>Customer support</li>
-                </ul>
-                <p id="lite-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-64">$19 / mo.</p>
-                <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Lite</button>
-            </div>
-        
-            <!-- Basic Plan -->
-            <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3 border-2 border-blue-400 relative">
-                <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Basic</h2>
-                <div class="absolute top-0 right-0 bg-blue-400 text-black px-2 py-1 rounded-bl-lg">Most Loved</div>
-                <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
-                    <li><strong>50,000</strong> words / mo.</li>
-                    <li><strong>Unlimited</strong> words per process</li>
-                    <li>Re-paraphrasing is free</li>
-                    <li>Undetectable by all AIs</li>
-                    <li>Compare mode</li>
-                    <li>No weird or random words</li>
-                    <li>Customer support</li>
-                    <li>Early access</li>
-                </ul>
-                <p id="basic-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-48">$29 / mo.</p>
-                <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Basic</button>
-            </div>
-        
-            <!-- Pro Plan -->
-            <div class="bg-gray-800 p-6 rounded-2xl w-full md:w-1/3">
-                <h2 class="text-3xl mt-6 font-bold mb-4 text-center">Pro</h2>
-                <ul class="mb-6 space-y-2 mt-14 text-md text-left ml-4 lg:ml-12" style="font-family: 'Roboto Mono', monospace;">
-                    <li><strong>150,000</strong> words / mo.</li>
-                    <li><strong>Unlimited</strong> words per process</li>
-                    <li>Re-paraphrasing is free</li>
-                    <li>Undetectable by all AIs</li>
-                    <li>Compare mode</li>
-                    <li>No weird or random words</li>
-                    <li>Customer support</li>
-                    <li>Early access</li>
-                </ul>
-                <p id="pro-price" class="text-2xl text-blue-400 font-bold mb-4 text-center mt-32 lg:mt-48">$79 / mo.</p>
-                <button class="w-full py-4 bg-blue-400 text-black font-bold rounded-lg mb-2 lg:mb-12">Choose Pro</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-gray-800 text-left p-10 rounded-2xl w-11/12 md:w-9/12 h-auto shadow-lg mb-12 mx-auto">
-        <h2 class="text-2xl font-bold mt-6 mb-4 text-white">Free</h2>
-        <ul class="text-sm leading-10 lg:text-lg text-gray-400 font-semibold space-y-2" style="font-family: 'Roboto Mono', monospace;">
-            <li>• 3,000 words in total</li>
-            <li>• 300 words / process</li>
-            <li>• compare mode</li>
-            <li>• No weird or random words</li>
-            <li>• customer support</li>
-        </ul>
-    </div>    
-
-    <div class="container py-16 lg:py-24 mx-auto p-4">
-        <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
-        <div class="space-y-4">
-            <!-- Toggle Section 1 -->
-            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <div class="flex justify-between items-center cursor-pointer toggle-section-header">
-                    <h2 class="text-xl lg:text-2xl text-left font-semibold">How do I make AI content undetectable?</h2>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
-                    <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
-                        Given that an average detector looks for repetitive sentence structures and common word patterns that align with AI models, you can bypass AI detection by rephrasing your text, replacing repetitive patterns and structures with more diverse language, adding transitions, and using more casual phrasing. Gob provides a reliable tool for this.
-                    </p>
-                </div>
-            </div>
-            <!-- Toggle Section 2 -->
-            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <div class="flex justify-between items-center cursor-pointer toggle-section-header">
-                    <h2 class="text-xl lg:text-2xl text-left font-semibold">What software is used to humanize AI content?</h2>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
-                    <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
-                        You can use Gob to humanize AI content and bypass any detector. Gob is a user-friendly, affordable tool that can help you convert any AI text into a human piece in a few clicks. Gob - Best AI Humanizer, that leaves a great user experience.
-                    </p>
-                </div>
-            </div>
-            <!-- Toggle Section 3 -->
-            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <div class="flex justify-between items-center cursor-pointer toggle-section-header">
-                    <h2 class="text-xl lg:text-2xl text-left font-semibold">What is the quality of the final result?</h2>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
-                    <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
-                        Gob has outsmarted detectors in 96% of cases so far. The tool preserves the overall meaning of the text while replacing repeating AI structures and predictable word patterns. For the best output from AI bypass tools, we recommend reviewing the text with a grammar-checking tool.
-                    </p>
-                </div>
-            </div>
-            <!-- Toggle Section 4 -->
-            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <div class="flex justify-between items-center cursor-pointer toggle-section-header">
-                    <h2 class="text-xl lg:text-2xl text-left font-semibold">How do AI detectors work?</h2>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
-                    <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
-                        AI detection software uses the same language models as AI-powered content creation tools. It employs ML (machine learning) and NLP (natural language processing) and artificial intelligence technology to analyze content and identify patterns. Each detector is trained on massive datasets of human-written and AI-generated texts, with its algorithm working on the assumption that content produced by artificial intelligence has certain features, such as repetitiveness, lack of semantic meaning, conventional word patterns, etc. The detector analyzes content for a range of parameters, including wording, sentence structures, and predictability, and compares it with the database of texts produced by humans and artificial intelligence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>    
-
-    <!-- Footer -->
-    <footer class="py-10 w-full text-white bg-gray-800">
-        <div class="container mx-auto text-center">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
-                <i class="fas fa-globe"></i>
-            </div>
+        <div class="bg-gray-800 text-left p-10 rounded-2xl w-11/12 md:w-9/12 h-auto shadow-lg mb-12 mx-auto">
+            <h2 class="text-2xl font-bold mt-6 mb-4 text-white">Free</h2>
+            <ul class="text-sm leading-10 lg:text-lg text-gray-400 font-semibold space-y-2" style="font-family: 'Roboto Mono', monospace;">
+                <li>• 3,000 words in total</li>
+                <li>• 300 words / process</li>
+                <li>• compare mode</li>
+                <li>• No weird or random words</li>
+                <li>• customer support</li>
+            </ul>
+        </div>    
     
-            <!-- Links Section -->
-            <div class="mb-6">
-                <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
-                    <li><a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a></li>
-                    <li><a href="history.html" class="text-gray-400 text-lg block hover:text-blue-400">History</a></li>
-                    <li><a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a></li>
-                </ul>
+        <div class="container py-16 lg:py-24 mx-auto p-4">
+            <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
+            <div class="space-y-4">
+                <!-- Toggle Section 1 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">How do I make AI content undetectable?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            Given that an average detector looks for repetitive sentence structures and common word patterns that align with AI models, you can bypass AI detection by rephrasing your text, replacing repetitive patterns and structures with more diverse language, adding transitions, and using more casual phrasing. Gob provides a reliable tool for this.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 2 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">What software is used to humanize AI content?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            You can use Gob to humanize AI content and bypass any detector. Gob is a user-friendly, affordable tool that can help you convert any AI text into a human piece in a few clicks. Gob - Best AI Humanizer, that leaves a great user experience.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 3 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">What is the quality of the final result?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            Gob has outsmarted detectors in 96% of cases so far. The tool preserves the overall meaning of the text while replacing repeating AI structures and predictable word patterns. For the best output from AI bypass tools, we recommend reviewing the text with a grammar-checking tool.
+                        </p>
+                    </div>
+                </div>
+                <!-- Toggle Section 4 -->
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <div class="flex justify-between items-center cursor-pointer toggle-section-header">
+                        <h2 class="text-xl lg:text-2xl text-left font-semibold">How do AI detectors work?</h2>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="hidden toggle-section-content overflow-hidden transition-all duration-500">
+                        <p class="mt-4 text-lg text-left" style="font-family: 'Roboto Mono', monospace;">
+                            AI detection software uses the same language models as AI-powered content creation tools. It employs ML (machine learning) and NLP (natural language processing) and artificial intelligence technology to analyze content and identify patterns. Each detector is trained on massive datasets of human-written and AI-generated texts, with its algorithm working on the assumption that content produced by artificial intelligence has certain features, such as repetitiveness, lack of semantic meaning, conventional word patterns, etc. The detector analyzes content for a range of parameters, including wording, sentence structures, and predictability, and compares it with the database of texts produced by humans and artificial intelligence.
+                        </p>
+                    </div>
+                </div>
             </div>
+        </div>    
     
-            <!-- Footer Text -->
-            <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
-                © 2025 Gob. All rights reserved.
+        <!-- Footer -->
+        <footer class="py-10 w-full text-white bg-gray-800">
+            <div class="container mx-auto text-center">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
+                    <i class="fas fa-globe"></i>
+                </div>
+        
+                <!-- Links Section -->
+                <div class="mb-6">
+                    <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
+                        <li><a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a></li>
+                        <li><a href="history.html" class="text-gray-400 text-lg block hover:text-blue-400">History</a></li>
+                        <li><a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Footer Text -->
+                <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
+                    © 2025 Gob. All rights reserved.
+                </div>
             </div>
-        </div>
-    </footer>    
+        </footer>  
+    </div>  
     
     <script src="script.js"></script>
+    <script src="loader.js"></script>
 
     <script>
         const toggle = document.getElementById('toggle');

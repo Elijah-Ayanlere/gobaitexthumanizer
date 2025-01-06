@@ -6,63 +6,70 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center flex-col">
-    <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
-        <div class="flex justify-between items-center md:mx-40 lg:mx-40">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl">
-                <i class="fas fa-globe"></i>
+<body class="bg-gray-900 text-white">
+
+    <!-- Loader placeholder -->
+    <div id="loader-container"></div>
+
+    <div id="main-content" class="hidden min-h-screen flex items-center justify-center flex-col">
+        <header id="dynamic-header" class="bg-gray-900 w-full p-6 lg:p-10 z-50 transition-all duration-300">
+            <div class="flex justify-between items-center md:mx-40 lg:mx-40">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl">
+                    <i class="fas fa-globe"></i>
+                </div>
+        
+                <nav class="hidden md:flex space-x-6 text-gray-400">
+                    <a href="paraphraser.html" class="text-gray-400 text-lg block hover:text-blue-400">Editor</a>
+                    <a href="history.html" class="text-blue-400 text-lg block">History</a>
+                    <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
+                </nav>
+        
+                <!-- Mobile Menu -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-    
-            <nav class="hidden md:flex space-x-6 text-gray-400">
-                <a href="paraphraser.html" class="text-gray-400 text-lg block hover:text-blue-400">Editor</a>
+        
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
+                <a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a>
                 <a href="history.html" class="text-blue-400 text-lg block">History</a>
                 <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
-            </nav>
-    
-            <!-- Mobile Menu -->
-            <div class="md:hidden">
-                <button id="menu-button" class="text-2xl text-blue-400 focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
-        </div>
+        </header>
     
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-6 mx-2 md:hidden">
-            <a href="paraphraser.html" class="text-gray-400  text-lg block hover:text-blue-400">Editor</a>
-            <a href="history.html" class="text-blue-400 text-lg block">History</a>
-            <a href="account.html" class="text-gray-400 text-lg block hover:text-blue-400">Account</a>
-        </div>
-    </header>
-
-    <div class="flex flex-col items-center justify-center max-w-full mx-auto p-6 min-h-full">
-        <h1 class="text-lg text-gray-500 font-bold"><i>No history yet</i></h1>
-    </div>    
-
-    <!-- Footer -->
-    <footer class="py-10 w-full text-white bg-gray-800">
-        <div class="container mx-auto text-center">
-            <!-- Logo -->
-            <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
-                <i class="fas fa-globe"></i>
-            </div>
+        <div class="flex flex-col items-center justify-center max-w-full mx-auto p-6 h-screen">
+            <h1 class="text-lg text-gray-500 font-bold"><i>No history yet</i></h1>
+        </div>    
     
-            <!-- Links Section -->
-            <div class="mb-6">
-                <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
-                    <li><a href="index.html" class="text-blue-400">Home</a></li>
-                    <li><a href="pricing.html" class="hover:text-blue-400">Pricing</a></li>
-                </ul>
+        <!-- Footer -->
+        <footer class="py-10 w-full text-white bg-gray-800">
+            <div class="container mx-auto text-center">
+                <!-- Logo -->
+                <div class="text-blue-400 text-3xl lg:text-4xl mb-4">
+                    <i class="fas fa-globe"></i>
+                </div>
+        
+                <!-- Links Section -->
+                <div class="mb-6">
+                    <ul class="flex text-xl lg:text-xl sm:flex justify-center space-x-4">
+                        <li><a href="paraphraser.html" class="text-blue-400">Home</a></li>
+                        <li><a href="pricing.html" class="hover:text-blue-400">Pricing</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Footer Text -->
+                <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
+                    © 2025 Gob. All rights reserved.
+                </div>
             </div>
-    
-            <!-- Footer Text -->
-            <div class="text-lg sm:text-3xl lg:text-xl text-gray-500">
-                © 2025 Gob. All rights reserved.
-            </div>
-        </div>
-    </footer>    
+        </footer>    
+    </div>
 
     <script src="script.js"></script>
+    <script src="loader.js"></script>
 </body>
 </html>
