@@ -15,6 +15,38 @@
             left: 0.5rem;
             pointer-events: none;
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Slide Down Animation */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slide Up Animation */
+        @keyframes slideUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white ">
